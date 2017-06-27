@@ -1,30 +1,35 @@
 <template>
   <div class="hello">
     <el-row>
+  
+      <el-col :span="4" class="menu">
+          <div class="layout-logo-left">
+             <h3>后台管理</h3>
+          </div>
+        <el-menu default-active="1" class="el-menu-vertical-demo" @select="routeTo" @open="handleOpen" @close="handleClose">
 
-      <el-col :span="4">
-        <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
-      <el-submenu index="1">
-        <template slot="title"><i class="el-icon-message"></i>导航一</template>
-        <el-menu-item-group>
-          <template slot="title">分组一</template>
-          <el-menu-item index="1-1">选项1</el-menu-item>
-          <el-menu-item index="1-2">选项2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="分组2">
-          <el-menu-item index="1-3">选项3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="1-4-1">选项1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-menu-item index="2"><i class="el-icon-menu"></i>导航二</el-menu-item>
-      <el-menu-item index="3"><i class="el-icon-setting"></i>导航三</el-menu-item>
-    </el-menu>
-      </el-col>
-      <el-col :span="20">
-        <div class="grid-content bg-purple-light"></div>
+         <el-menu-item index="1"><i class="el-icon-menu"></i>导航一</el-menu-item>
+         <el-menu-item index="2"><i class="el-icon-menu"></i>导航二</el-menu-item>
+     
+         <el-menu-item index="3"><i class="el-icon-setting"></i>导航三</el-menu-item>
+
+        </el-menu>
+
+    </el-col>
+    
+    
+      <el-col :span="20" >
+         <div class="layout-header">
+              
+            </div>
+            <div class="content">
+                <div class="grid-content bg-purple-light">
+            <transition mode="out-in">
+                <router-view></router-view>
+            </transition>
+        </div>
+            </div>
+       
       </el-col>
     </el-row>
 
@@ -36,21 +41,61 @@
     name: 'index',
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        page: [{
+                    index: 1,
+                    name: 'index'
+                }, {
+                    index: 2,
+                    name: 'mark'
+                }, {
+                    index: 3,
+                    name: 'edit'
+                }, {
+                    index: 4,
+                    name: ''
+                }]
       }
     },
-     methods: {
+    methods: {
       handleOpen(key, keyPath) {
         console.log(key, keyPath);
       },
       handleClose(key, keyPath) {
         console.log(key, keyPath);
+      },
+      routeTo(e){
+        this.$router.push(this.$data.page[e - 1].name);
       }
     }
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  
+<style>
+  .hello{
+    min-width: 810px;
+    height: 100%;
+    min-height: 600px;
+    position: relative;
+  }
+  .menu{
+    background-color: #eef1f6;
+    min-height: 640px;
+  }
+  .content{
+    padding:20px;
+  }
+  .grid-content{
+     padding:10px;
+     background-color: #FFFFFF;
+     min-height: 540px;
+     border-radius: 5px;
+  }
+  .layout-header {
+    height: 60px;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+}
+
 </style>
