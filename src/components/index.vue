@@ -9,9 +9,9 @@
         <el-menu default-active="1" class="el-menu-vertical-demo" @select="routeTo" @open="handleOpen" @close="handleClose">
 
          <el-menu-item index="1"><i class="el-icon-menu"></i>导航一</el-menu-item>
-         <el-menu-item index="2"><i class="el-icon-menu"></i>导航二</el-menu-item>
+         <el-menu-item index="2"><i class="el-icon-date"></i>导航二</el-menu-item>
      
-         <el-menu-item index="3"><i class="el-icon-setting"></i>导航三</el-menu-item>
+         <el-menu-item index="3"><i class="el-icon-edit"></i>导航三</el-menu-item>
 
         </el-menu>
 
@@ -84,18 +84,36 @@
     min-height: 640px;
   }
   .content{
-    padding:20px;
+    padding:10px 20px;
   }
   .grid-content{
      padding:10px;
      background-color: #FFFFFF;
-     min-height: 540px;
+     min-height: 543px;
      border-radius: 5px;
+     
   }
   .layout-header {
-    height: 60px;
+    height: 50px;
     background: #fff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
-}
+    margin: 8px 20px;
+    border-radius: 5px;
+  }
+  .layout-logo-left {
+    width: 90%;
+    height: 30px;
+    background: #5b6270;
+    border-radius: 3px;
+    margin: 15px auto;
+    line-height: 30px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+  }
+   .layout-logo-left h3{
+     margin-top: 2px;
+   }
 
 </style>
