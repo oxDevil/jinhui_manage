@@ -4,14 +4,14 @@
   
       <el-col :span="4" class="menu">
           <div class="layout-logo-left">
-             <h3>后台管理</h3>
+             <h3>金辉建设后台管理</h3>
           </div>
         <el-menu default-active="1" class="el-menu-vertical-demo" @select="routeTo" @open="handleOpen" @close="handleClose">
 
-         <el-menu-item index="1"><i class="el-icon-menu"></i>导航一</el-menu-item>
-         <el-menu-item index="2"><i class="el-icon-date"></i>导航二</el-menu-item>
+         <el-menu-item index="1"><i class="el-icon-menu"></i>人员管理</el-menu-item>
+         <el-menu-item index="2"><i class="el-icon-date"></i>投标详情</el-menu-item>
      
-         <el-menu-item index="3"><i class="el-icon-edit"></i>导航三</el-menu-item>
+         <el-menu-item index="3"><i class="el-icon-edit"></i>编辑</el-menu-item>
 
         </el-menu>
 
